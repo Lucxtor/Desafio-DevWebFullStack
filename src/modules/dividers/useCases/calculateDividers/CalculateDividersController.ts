@@ -20,7 +20,9 @@ class CalculateDividersController {
             }
         }
 
-        return response.status(200).json(soma);
+        const resultado = { resultado: soma };
+
+        return response.json(resultado);
     }
 }
 
