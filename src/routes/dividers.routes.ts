@@ -5,7 +5,11 @@ import { calculateDividersController } from "../modules/dividers/useCases/calcul
 const dividersRoutes = Router();
 
 dividersRoutes.post("/", (request, response) => {
-    return calculateDividersController.handle(request, response);
+    try {
+        return calculateDividersController.handle(request, response);
+    } catch (err: any) {
+        return response.status(400).json(err.message);
+    }
 });
 
 export { dividersRoutes };
