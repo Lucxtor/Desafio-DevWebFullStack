@@ -6,21 +6,18 @@ class CalculateDividersUseCase {
     execute({ valor }: IRequest): number {
         const factors = [];
         let aux = valor;
+        let count = 0;
 
         while (aux !== 1) {
-            let count = 2;
-            // eslint-disable-next-line no-constant-condition
-            while (true) {
-                if (aux % count === 0) {
-                    factors.push(count);
-                    aux /= count;
-                    break;
-                }
+            count = 2;
+            while (aux % count !== 0) {
                 count += 1;
             }
+            factors.push(count);
+            aux /= count;
         }
 
-        let count = 1;
+        count = 1;
         let factor = 1;
         let dividers = 1;
         for (count; count <= factors.length; count += 1) {
