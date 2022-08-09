@@ -6,7 +6,7 @@
   "proxy": "http://localhost:3000",
   "scripts": {
     "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn server.ts",
-    "start": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn server.ts"
+    "start": "node server.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
